@@ -1,0 +1,15 @@
+{
+  "name": "sdk",
+  "version": "1.0.0",
+  "description": "AWS SDK localstack",
+  "main": "create.js",
+  "scripts": {
+    "create": "node create.js",
+    "delete": "node delete.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1260.0"
+  }
+}

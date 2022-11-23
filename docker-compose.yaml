@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  localstack:
+    image: 'localstack/localstack-light'
+    ports:
+      - '4566-4597:4566-4597'
+    environment:
+      - SERVICES=sqs
+      - AWS_DEFAULT_REGION=us-east-1
+      - EDGE_PORT=4566
+      - DEBUG=1
+    volumes:
+      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
