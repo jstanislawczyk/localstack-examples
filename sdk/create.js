@@ -3,9 +3,13 @@
     const sqs = new AWS.SQS({
         endpoint: process.env.AWS_ENDPOINT || 'http://localhost:4566',
         region: 'us-east-1',
+        credentials: {
+            accessKeyId: 'localstack',
+            secretAccessKey: 'localstackSecret',
+        },
     });
     const params = {
-        QueueName: 'test-queue',
+        QueueName: 'sdk-test-queue',
     };
 
     try {
