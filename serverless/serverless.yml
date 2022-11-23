@@ -1,0 +1,22 @@
+service: sqs-lambda-tutorial
+
+provider:
+  name: aws
+  stage: local
+  region: us-east-1
+
+plugins:
+  - serverless-localstack
+
+# use the LocalStack plugin but only for the stage “local”
+custom:
+  localstack:
+    stages:
+      - local
+
+resources:
+  Resources:
+    SQSQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: serverless-test-sqs
