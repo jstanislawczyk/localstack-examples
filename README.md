@@ -11,5 +11,11 @@ Localstack examples for SDK, Terraform and Serverless Framework
     * run `npm run create` to create queue
     * run `npm run delete` to delete queue
 5. For Terraform
+   * go to `./terraform`
+   * install Terraform
+   * run `terraform init` to initialize Terraform
+   * run `terraform plan` to check resources that will be created
+   * run `terraform apply` to create resources
+   * run `terraform destroy` to delete resources
 6. For Serverless Framework
 7. Run `aws --endpoint-url=http://localhost:4566 sqs list-queues` to confirm that queue was created
