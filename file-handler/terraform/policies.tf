@@ -5,6 +5,13 @@ resource "aws_iam_policy" "lambda_file_handler_policy" {
 {
   "Version": "2012-10-17",
   "Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:*"
+    ],
+    "Resource": "*"
+    },
     {
       "Effect": "Allow",
       "Action": [
@@ -21,9 +28,7 @@ resource "aws_iam_policy" "lambda_file_handler_policy" {
         "sqs:DeleteMessage",
         "sqs:GetQueueAttributes"
       ],
-      "Resource": [
-        "${aws_sqs_queue.file.arn}"
-      ]
+      "Resource": "${aws_sqs_queue.file.arn}"
     }
   ]
 }

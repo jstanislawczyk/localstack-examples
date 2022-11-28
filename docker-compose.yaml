@@ -6,7 +6,7 @@ services:
     ports:
       - '4566-4597:4566-4597'
     environment:
-      - SERVICES=sqs
+      - SERVICES=sqs,s3,lambda
       - AWS_DEFAULT_REGION=us-east-1
       - EDGE_PORT=4566
       - DEBUG=1
